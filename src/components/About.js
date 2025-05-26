@@ -9,6 +9,7 @@ import tech6 from '../technologies/flask.png';
 import tech7 from '../technologies/groq.png';
 import biologyImage from '../vector1.png';
 
+
 const technologies = [
   { src: pythonSymbol, alt: "Python" },
   { src: tech2,      alt: "Neo4j" },
@@ -84,7 +85,7 @@ export default function About() {
   }, []);
 
   return (
-    <Box sx={{ flexGrow: 1, p: 2, px: { xs: 2, sm: 4, md: 20 }, overflow: 'hidden' }}>
+    <Box id="about" sx={{ flexGrow: 1, p: 2, px: { xs: 2, sm: 4, md: 20 }, overflow: 'hidden' }}>
       <Paper elevation={0} sx={{ p: 2 }}>
         <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
           About Biology Assistive System
@@ -168,6 +169,8 @@ export default function About() {
           ))}
         </Box>
       </Box>
+
     </Box>
+    
   );
 }
