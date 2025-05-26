@@ -23,35 +23,31 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState('home');
 
-  // Background fade on scroll
+  // Change background when you scroll down
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Improved scroll-spy: highlight the section whose top is above the viewport center
+  // Scroll-spy: detect which section is in view
   useEffect(() => {
-    const handleScrollSpy = () => {
-      const triggerLine = window.scrollY + window.innerHeight / 2;
+    const onScrollSpy = () => {
+      const offset = window.scrollY + 80;
       let current = 'home';
-
       navLinks.forEach(({ id }) => {
-        const section = document.getElementById(id);
-        if (section && section.offsetTop <= triggerLine) {
+        const sec = document.getElementById(id);
+        if (sec && sec.offsetTop <= offset) {
           current = id;
         }
       });
-
       setActive(current);
     };
+    window.addEventListener('scroll', onScrollSpy);
+    return () => window.removeEventListener('scroll', onScrollSpy);
+  }, []);
 
-    window.addEventListener('scroll', handleScrollSpy);
-    handleScrollSpy(); // initialize on mount
-    return () => window.removeEventListener('scroll', handleScrollSpy);
-  }, [navLinks]);
-
-  // Smooth scroll handler
+  // Smooth scrolling handler
   const handleClick = (id) => {
     if (id === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });

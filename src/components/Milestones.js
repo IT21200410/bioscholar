@@ -83,7 +83,6 @@ export default function ProjectMilestones() {
         gutterBottom
         sx={{
           fontWeight: 'bold',
-          textTransform: 'uppercase',
           mb: 6,
           textAlign: 'center',
         }}
