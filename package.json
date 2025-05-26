@@ -2,7 +2,7 @@
   "name": "biology-assistive-web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://it21200410.github.io/bischolar",
+  "homepage": "https://it21200410.github.io/bioscholar",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
