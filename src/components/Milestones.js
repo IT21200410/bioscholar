@@ -1,5 +1,20 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
+import { motion } from 'framer-motion';
+
+const MotionBox = motion(Box);
+
+const cardVariants = {
+  hidden: (isLeft) => ({
+    opacity: 0,
+    x: isLeft ? -100 : 100,
+  }),
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6, ease: 'easeOut' },
+  },
+};
 
 const milestones = [
   { 
@@ -58,19 +73,18 @@ const milestones = [
   },
 ];
 
-export default function ProjectMilestones() {
-  // Two sample gradients for alternating cards
-  const gradients = [
-    'linear-gradient(135deg, rgb(19, 136, 28) 0%, rgb(4, 207, 48) 100%)',
-    'linear-gradient(135deg, rgb(4, 207, 48) 0%, rgb(19, 136, 28) 100%)',
-  ];
+const gradients = [
+  'linear-gradient(135deg, rgb(19, 136, 28) 0%, rgb(4, 207, 48) 100%)',
+  'linear-gradient(135deg, rgb(4, 207, 48) 0%, rgb(19, 136, 28) 100%)',
+];
 
+export default function ProjectMilestones() {
   return (
     <Box
-    id="milestones" 
+      id="milestones"
       sx={{
         position: 'relative',
-        py: 6, // top and bottom padding
+        py: 6,
         px: { xs: 2, sm: 4, md: 8, lg: 12 },
         maxWidth: 1200,
         mx: 'auto',
@@ -90,11 +104,10 @@ export default function ProjectMilestones() {
         Project Milestones
       </Typography>
 
-      {/* Central spine, starting below the header */}
+      {/* Central spine */}
       <Box
         sx={(theme) => ({
           position: 'absolute',
-          // offset by container's top padding (theme.spacing(6)) + header's fontSize
           top: `calc(${theme.spacing(8)} + ${theme.typography.h4.fontSize})`,
           bottom: 0,
           left: '50%',
@@ -134,8 +147,13 @@ export default function ProjectMilestones() {
               }}
             />
 
-            {/* Milestone card */}
-            <Box
+            {/* Animated Milestone card */}
+            <MotionBox
+              custom={isLeft}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.3 }}
               sx={{
                 width: { xs: '90%', sm: '45%' },
                 background: gradient,
@@ -164,8 +182,6 @@ export default function ProjectMilestones() {
                 <Typography variant="body2" sx={{ fontWeight: 500 }}>
                   Mark Allocation – {item.mark}
                 </Typography>
-
-                {/* Pill badge */}
                 <Box
                   sx={{
                     backgroundColor: 'rgba(255,255,255,0.3)',
@@ -179,7 +195,7 @@ export default function ProjectMilestones() {
                   {item.case}
                 </Box>
               </Box>
-            </Box>
+            </MotionBox>
           </Box>
         );
       })}
