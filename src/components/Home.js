@@ -14,6 +14,7 @@ import Achievements from './Achievements';
 import Team from './Team';
 import Contact from './Contact';
 import Footer from './Footer';
+import Specifications from './Specifications';
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -164,6 +165,7 @@ export default function Home() {
 
       {/* Page Sections */}
       <About />
+      <Specifications/>
       <Documents />
       <Presentations />
       <Milestones />

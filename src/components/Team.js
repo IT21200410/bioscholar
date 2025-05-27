@@ -51,9 +51,9 @@ const members = [
     img: Lakmini
   },
   {
-    name: 'Samadhi Ponnaya',
-    role: 'Pabaya',
-    desc: 'kukula in SLLIT',
+    name: 'Mr. Samadhi Rathnayake',
+    role: 'Co-Supervisor',
+    desc: 'Lecturer, Sri Lanka Institute of Information Technology',
     img: Samadhir
   }
 ];

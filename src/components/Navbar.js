@@ -23,16 +23,14 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState('home');
 
-  // Handle background fade on scroll
+  // Change background when you scroll down
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Scroll-spy to set active link
+  // Scroll-spy: detect which section is in view
   useEffect(() => {
     const onScrollSpy = () => {
       const offset = window.scrollY + 80;
@@ -49,18 +47,15 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScrollSpy);
   }, []);
 
-  // Smooth scroll for each section, with special handling for home & about
+  // Smooth scrolling handler
   const handleClick = (id) => {
     if (id === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (id === 'about') {
-      // since your home section is full-screen (100vh), this scrolls right to the top of About
       window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
     } else {
       const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
@@ -68,17 +63,12 @@ export default function Navbar() {
     <AppBar
       position="fixed"
       elevation={0}
-      style={{
+      sx={{
         backgroundColor: scrolled ? 'rgba(0,0,0,0.5)' : 'transparent',
         transition: 'background-color 0.3s',
       }}
     >
-      <Toolbar
-        sx={{
-          justifyContent: 'space-between',
-          px: { xs: 1, sm: 2, md: 4 },
-        }}
-      >
+      <Toolbar sx={{ justifyContent: 'space-between', px: { xs: 1, sm: 2, md: 4 } }}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <IconButton edge="start" color="inherit" aria-label="logo">
             <img src={Logo} alt="Logo" style={{ width: 48 }} />
