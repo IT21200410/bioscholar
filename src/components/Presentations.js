@@ -8,10 +8,10 @@ import Ppt2 from '../ppt2.png';
 import Finalppt from '../finalppt.png';
 
 const pres = [
-  { title: 'Proposal presentation', desc: 'Initial Presentation with Overview of Research Problem', img: Proposal_ppt, link: 'https://drive.google.com' },
-  { title: 'Progress presentation-1', desc: '50% Project Completion', img: Ppt1, link: 'https://drive.google.com' },
-  { title: 'Progress presentation-2', desc: '90% Project Completion', img: Ppt2, link: 'https://drive.google.com' },
-  { title: 'Final presentation', desc: '100% Completion with deployed Solution', img: Finalppt, link: 'https://drive.google.com' }
+  { title: 'Proposal presentation', desc: 'Initial Presentation with Overview of Research Problem', img: Proposal_ppt, link: 'https://docs.google.com/presentation/d/1XQSAY59tMwyCQrVe6Uxmf8T3gRuHlrDJ/edit?usp=sharing&ouid=106088252457190602616&rtpof=true&sd=true' },
+  { title: 'Progress presentation-1', desc: '50% Project Completion', img: Ppt1, link: 'https://docs.google.com/presentation/d/1WzlLA417QNmI3XKteS1e7uA6ztX-quE-/edit?usp=sharing&ouid=106088252457190602616&rtpof=true&sd=true' },
+  { title: 'Progress presentation-2', desc: '90% Project Completion', img: Ppt2, link: 'https://docs.google.com/presentation/d/1cNHOQh7Aa5kEsYr9G15PDFUEmiNbRgaE/edit?usp=sharing&ouid=106088252457190602616&rtpof=true&sd=true' },
+  { title: 'Final presentation', desc: '100% Completion with deployed Solution', img: Finalppt, link: 'https://drive.google.com/drive/folders/1ckZn0tV8PHgq37wdmBk9nVu01zqdI0ik?usp=sharing' }
 ];
 
 export default function Presentations() {
