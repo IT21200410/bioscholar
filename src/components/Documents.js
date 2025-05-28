@@ -11,7 +11,7 @@ import Logbook from '../logbook.png';
 import Bussines from '../bussines-report.png';
 
 const docs = [
-  { title: 'Project Charter', desc: 'The document gives the information regarding the statement of scope, objectives overview, an outline of scope, an approximate schedule and people who are participating in a project', img: Project_charter, link: 'https://drive.google.com/drive/folders/1i8dVNiVnR9Ro5QlEHTHoafvV5_yzbLXo?usp=sharing' },
+  { title: 'TAF', desc: 'The document gives the information regarding the statement of scope, objectives overview, an outline of scope, an approximate schedule and people who are participating in a project', img: Project_charter, link: 'https://drive.google.com/drive/folders/1i8dVNiVnR9Ro5QlEHTHoafvV5_yzbLXo?usp=sharing' },
   { title: 'Project Proposal', desc: 'The document contains details like goals, objectives, important dates, milestones and requirements needed to start and complete the project.', img: Project_proposal, link: 'https://drive.google.com/drive/folders/1YDaH5WA9-ZBaFmCP2SXCtVvrC0LyGN0K?usp=sharing' },
   { title: 'Research Paper', desc: 'A research paper contains writing that provides Literature review, Research methodology, analysis, interpretation, and argument based on in-depth independent research', img: Reserach_paper, link: 'https://ieeexplore.ieee.org' },
   { title: 'Final Thesis', desc: 'The document contains the Proposed solution to the research question, which was finalized after completing the research', img: Thesis, link: 'https://drive.google.com/drive/folders/1Vfphcndr__lFji8uALzR5V01YcUFs5rl?usp=sharing' },
