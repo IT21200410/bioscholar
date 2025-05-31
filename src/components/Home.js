@@ -166,10 +166,10 @@ export default function Home() {
       {/* Page Sections */}
       <About />
       <Specifications/>
+      <Domain />
       <Documents />
       <Presentations />
       <Milestones />
-      <Domain />
       <Achievements />
       <Team />
       <Contact />
